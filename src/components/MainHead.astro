@@ -1,0 +1,31 @@
+---
+interface Props {
+    language: string;
+    title: string;
+    description: string;
+}
+
+const { language, title, description } = Astro.props;
+---
+
+<meta charset="UTF-8">
+<meta name="description" property="og:description" content={description}>
+<meta name="viewport" content="width=device-width" />
+<title>{title}</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+  media="print"
+  onload="this.onload=null;this.removeAttribute('media');"
+  fetchpriority="high"
+/>
+
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+  />
+</noscript>

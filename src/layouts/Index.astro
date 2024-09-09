@@ -1,0 +1,15 @@
+---
+import Layout from "./Layout.astro";
+
+interface Props {
+    language: string;
+}
+
+const { language } = Astro.props;
+---
+
+<Layout language={language}>
+<main slot="body">
+    <h1>hi</h1>
+</main>
+</Layout>

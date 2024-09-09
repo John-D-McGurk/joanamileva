@@ -1,0 +1,171 @@
+---
+import MainHead from "../components/MainHead.astro";
+
+interface Props {
+  language: string;
+}
+
+const { language } = Astro.props;
+---
+
+<MainHead title="title" description="desc" language={language} />
+<slot name="body" />
+
+<style is:global>
+  @font-face {
+    font-family: "Felix Titling";
+    src: url(/fonts/felix-titling.woff2) format(woff2);
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    font-size: 62.5%;
+
+    --primary: #d8e660;
+    --secondary: #fb2848;
+    --white: #fcfffc;
+    --black: #1a1515;
+
+    --bg-gradient: linear-gradient(270deg, var(--black) 0%, #353535 100%);
+
+    --space-xl: 12rem;
+    --space-md: 2.4rem;
+    --space-sm: 1.6rem;
+
+    --text-xl: 3.2rem;
+    --text-lg: 2rem;
+    --text-md: 1.6rem;
+    --text-sm: 1.4rem;
+  }
+
+  h1 {
+    font-size: var(--text-xl);
+    font-family: "Felix Titling";
+  }
+
+  h2 {
+    font-size: var(--text-md);
+  }
+
+  p {
+    font-size: var(--text-sm);
+  }
+
+  .text-xl {
+    font-size: var(--text-xl)
+  }
+
+  .text-md {
+    font-size: var(--text-md);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+  
+  .relative {
+    position: relative;
+  }
+
+  .absolute {
+    position: absolute;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .align-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .align-end {
+    align-items: flex-end;
+  }
+
+  .justify-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .justify-end {
+    display: flex;
+    justify-content: end;
+  }
+
+  .justify-between {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .min-100vh {
+    min-height: 100lvh;
+  }
+
+@media only screen and (min-width: 769px) {
+    :root {
+        --text-xl: 6.4rem;
+        --text-md: 2.4rem;
+        --text-sm: 2rem;
+    }
+  
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.justify-end {
+    display: flex;
+    justify-content: end;
+}
+
+.justify-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.desktop-only {
+    display: none;
+}
+}
+  @media only screen and (min-width: 1200px) {
+    :root {
+      --text-md: 4.2rem;
+      --text-sm: 2.4rem;
+    }
+
+    .desktop-only {
+        display: unset;
+    }
+  } 
+</style>
